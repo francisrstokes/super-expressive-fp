@@ -63,7 +63,7 @@ const dispatchToGroupingGetter = getter => elements => elementFn(se => {
   return currentSe.end();
 });
 
-const SuperExpressive = (elements = []) => {
+module.exports.SuperExpressive = (elements = []) => {
   let currentSe = SE();
   for (const element of elements) {
     assertIsSuperExpressiveElement(element);
@@ -73,58 +73,58 @@ const SuperExpressive = (elements = []) => {
   return currentSe;
 };
 
-const startOfInput = dispatchToGetter('startOfInput');
-const endOfInput = dispatchToGetter('endOfInput');
-const allowMultipleMatches = dispatchToGetter('allowMultipleMatches');
-const lineByLine = dispatchToGetter('lineByLine');
-const caseInsensitive = dispatchToGetter('caseInsensitive');
-const sticky = dispatchToGetter('sticky');
-const unicode = dispatchToGetter('unicode');
-const singleLine = dispatchToGetter('singleLine');
-const anyChar = dispatchToGetter('anyChar');
-const whitespaceChar = dispatchToGetter('whitespaceChar');
-const nonWhitespaceChar = dispatchToGetter('nonWhitespaceChar');
-const digit = dispatchToGetter('digit');
-const nonDigit = dispatchToGetter('nonDigit');
-const word = dispatchToGetter('word');
-const nonWord = dispatchToGetter('nonWord');
-const wordBoundary = dispatchToGetter('wordBoundary');
-const nonWordBoundary = dispatchToGetter('nonWordBoundary');
-const newline = dispatchToGetter('newline');
-const carriageReturn = dispatchToGetter('carriageReturn');
-const tab = dispatchToGetter('tab');
-const nullByte = dispatchToGetter('nullByte');
+module.exports.startOfInput = dispatchToGetter('startOfInput');
+module.exports.endOfInput = dispatchToGetter('endOfInput');
+module.exports.allowMultipleMatches = dispatchToGetter('allowMultipleMatches');
+module.exports.lineByLine = dispatchToGetter('lineByLine');
+module.exports.caseInsensitive = dispatchToGetter('caseInsensitive');
+module.exports.sticky = dispatchToGetter('sticky');
+module.exports.unicode = dispatchToGetter('unicode');
+module.exports.singleLine = dispatchToGetter('singleLine');
+module.exports.anyChar = dispatchToGetter('anyChar');
+module.exports.whitespaceChar = dispatchToGetter('whitespaceChar');
+module.exports.nonWhitespaceChar = dispatchToGetter('nonWhitespaceChar');
+module.exports.digit = dispatchToGetter('digit');
+module.exports.nonDigit = dispatchToGetter('nonDigit');
+module.exports.word = dispatchToGetter('word');
+module.exports.nonWord = dispatchToGetter('nonWord');
+module.exports.wordBoundary = dispatchToGetter('wordBoundary');
+module.exports.nonWordBoundary = dispatchToGetter('nonWordBoundary');
+module.exports.newline = dispatchToGetter('newline');
+module.exports.carriageReturn = dispatchToGetter('carriageReturn');
+module.exports.tab = dispatchToGetter('tab');
+module.exports.nullByte = dispatchToGetter('nullByte');
 
-const string = dispatchToMethod('string');
-const char = dispatchToMethod('char');
-const range = dispatchToMethod('range');
-const anyOfChars = dispatchToMethod('anyOfChars');
-const anythingButChars = dispatchToMethod('anythingButChars');
-const anythingButString = dispatchToMethod('anythingButString');
-const anythingButRange = dispatchToMethod('anythingButRange');
-const namedBackreference = dispatchToMethod('namedBackreference');
-const backreference = dispatchToMethod('backreference');
+module.exports.string = dispatchToMethod('string');
+module.exports.char = dispatchToMethod('char');
+module.exports.range = dispatchToMethod('range');
+module.exports.anyOfChars = dispatchToMethod('anyOfChars');
+module.exports.anythingButChars = dispatchToMethod('anythingButChars');
+module.exports.anythingButString = dispatchToMethod('anythingButString');
+module.exports.anythingButRange = dispatchToMethod('anythingButRange');
+module.exports.namedBackreference = dispatchToMethod('namedBackreference');
+module.exports.backreference = dispatchToMethod('backreference');
 
-const optional = dispatchToGetterQuantifier('optional');
-const zeroOrMore = dispatchToGetterQuantifier('zeroOrMore');
-const zeroOrMoreLazy = dispatchToGetterQuantifier('zeroOrMoreLazy');
-const oneOrMore = dispatchToGetterQuantifier('oneOrMore');
-const oneOrMoreLazy = dispatchToGetterQuantifier('oneOrMoreLazy');
+module.exports.optional = dispatchToGetterQuantifier('optional');
+module.exports.zeroOrMore = dispatchToGetterQuantifier('zeroOrMore');
+module.exports.zeroOrMoreLazy = dispatchToGetterQuantifier('zeroOrMoreLazy');
+module.exports.oneOrMore = dispatchToGetterQuantifier('oneOrMore');
+module.exports.oneOrMoreLazy = dispatchToGetterQuantifier('oneOrMoreLazy');
 
-const capture = dispatchToGroupingGetter('capture');
-const anyOf = dispatchToGroupingGetter('anyOf');
-const group = dispatchToGroupingGetter('group');
-const assertAhead = dispatchToGroupingGetter('assertAhead');
-const assertNotAhead = dispatchToGroupingGetter('assertNotAhead');
-const assertBehind = dispatchToGroupingGetter('assertBehind');
-const assertNotBehind = dispatchToGroupingGetter('assertNotBehind');
+module.exports.capture = dispatchToGroupingGetter('capture');
+module.exports.anyOf = dispatchToGroupingGetter('anyOf');
+module.exports.group = dispatchToGroupingGetter('group');
+module.exports.assertAhead = dispatchToGroupingGetter('assertAhead');
+module.exports.assertNotAhead = dispatchToGroupingGetter('assertNotAhead');
+module.exports.assertBehind = dispatchToGroupingGetter('assertBehind');
+module.exports.assertNotBehind = dispatchToGroupingGetter('assertNotBehind');
 
-const exactly = dispatchToMethodQuantifier('exactly');
-const atLeast = dispatchToMethodQuantifier('atLeast');
-const between = dispatchToMethodQuantifier2('between');
-const betweenLazy = dispatchToMethodQuantifier2('betweenLazy');
+module.exports.exactly = dispatchToMethodQuantifier('exactly');
+module.exports.atLeast = dispatchToMethodQuantifier('atLeast');
+module.exports.between = dispatchToMethodQuantifier2('between');
+module.exports.betweenLazy = dispatchToMethodQuantifier2('betweenLazy');
 
-const namedCapture = (index, elements) => elementFn(se => {
+module.exports.namedCapture = (index, elements) => elementFn(se => {
   assertIsSuperExpressiveObject(se);
 
   let currentSe = se.namedCapture(index);
@@ -136,71 +136,18 @@ const namedCapture = (index, elements) => elementFn(se => {
   return currentSe.end();
 });
 
-const subexpression = (expr, opts) => elementFn(se => {
+module.exports.subexpression = (expr, opts) => elementFn(se => {
   assertIsSuperExpressiveObject(se);
   assertIsSuperExpressiveObject(expr);
   return se.subexpression(expr, opts);
 });
 
-const toRegexString = se => {
+module.exports.toRegexString = se => {
   assertIsSuperExpressiveObject(se);
   return se.toRegexString();
-}
-const toRegex = se => {
+};
+
+module.exports.toRegex = se => {
   assertIsSuperExpressiveObject(se);
   return se.toRegex();
-}
-
-module.exports = {
-  SuperExpressive,
-  startOfInput,
-  endOfInput,
-  allowMultipleMatches,
-  lineByLine,
-  caseInsensitive,
-  sticky,
-  unicode,
-  singleLine,
-  anyChar,
-  whitespaceChar,
-  nonWhitespaceChar,
-  digit,
-  nonDigit,
-  word,
-  nonWord,
-  wordBoundary,
-  nonWordBoundary,
-  newline,
-  carriageReturn,
-  tab,
-  nullByte,
-  string,
-  char,
-  range,
-  anyOfChars,
-  anythingButChars,
-  anythingButString,
-  anythingButRange,
-  optional,
-  zeroOrMore,
-  zeroOrMoreLazy,
-  oneOrMore,
-  oneOrMoreLazy,
-  capture,
-  anyOf,
-  group,
-  assertAhead,
-  assertNotAhead,
-  assertBehind,
-  assertNotBehind,
-  backreference,
-  namedBackreference,
-  namedCapture,
-  exactly,
-  atLeast,
-  between,
-  betweenLazy,
-  subexpression,
-  toRegexString,
-  toRegex,
 };
