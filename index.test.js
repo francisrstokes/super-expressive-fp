@@ -51,7 +51,7 @@ const {
   subexpression,
   toRegexString,
   toRegex,
-} = require('./src');
+} = require('.');
 
 const testRegexEquality = (description, regex, superExpression) => it(description, () => {
   const regexStr = regex.toString();
